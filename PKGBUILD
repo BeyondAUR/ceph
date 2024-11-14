@@ -188,6 +188,8 @@ __version="${pkgver}-${pkgrel}"
 export CFLAGS="${CFLAGS/-fno-plt/}"
 export CXXFLAGS="${CXXFLAGS/-fno-plt/}"
 
+export RUSTUP_TOOLCHAIN=stable
+
 
 prepare() {
   cd "${srcdir}/${pkgbase}-${pkgver}"
@@ -256,8 +258,6 @@ build() {
   export CXXFLAGS+=" ${CPPFLAGS}"
   export CMAKE_BUILD_TYPE='RelWithDebInfo'
   export CMAKE_WARN_UNUSED_CLI=no
-
-  export RUSTUP_TOOLCHAIN=stable
 
   cmake \
     -B build \
