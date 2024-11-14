@@ -257,6 +257,8 @@ build() {
   export CMAKE_BUILD_TYPE='RelWithDebInfo'
   export CMAKE_WARN_UNUSED_CLI=no
 
+  export RUSTUP_TOOLCHAIN=stable
+
   cmake \
     -B build \
     -DCMAKE_INSTALL_PREFIX=/usr \
